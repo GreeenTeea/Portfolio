@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Portfolio</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header class="header">
+		<nav class="header__nav">
+			<ul class="header__list">
+				<li class="header__item"><a class="header__link hl1" href="#home">Home</a></li>
+				<li class="header__item"><a class="header__link hl2" href="#aboutme">About me</a></li>
+				<li class="header__item"><a class="header__link hl3" href="#skills">Skills</a></li>
+				<li class="header__item"><a class="header__link hl4" href="#portfolio">Portfolio</a></li>
+				<li class="header__item"><a class="header__link hl5" href="#footer__contacts">Contacts</a></li>
+				<li class="header__item"><a class="header__link hl6" href="tasks.html">Tasks</a></li>
+			</ul>
+			<div class="header__menu">
+				<a class="header__button" href="#"><img src="img/burger.svg" alt="menu"></a>
+				<div class="header__droplist">
+					<a class="header__button_close" href="#"><img src="img/close_button.svg" alt="close"></a>
+					<ul>
+						<li><a class="header__link hl1" href="#home">Home</a></li>
+						<li><a class="header__link hl2" href="#aboutme">About me</a></li>		
+						<li><a class="header__link hl3" href="#skills">Skills</a></li>
+						<li><a class="header__link hl4" href="#portfolio">Portfolio</a></li>
+						<li><a class="header__link hl5" href="#footer__contacts">Contacts</a></li>
+						<li><a class="header__link hl6" href="tasks.html">Tasks</a></li>
+					</ul>	
+					<div class="header__button_switch">
+						<button type="button" class="header__button_ru" value="ru" onclick="return changeURLLanguage(this);">RU</button>
+						<button type="button" class="header__button_eng" value="eng" onclick="return changeURLLanguage(this);">ENG</button>
+					</div>					
+				</div>
+			</div>
+		</nav>
+	</header>
+	<div class="container">
+		<section>
+			<div class="main" id="home">
+				<h1 class="main__name">Kovrigin Peter</h1>
+				<p class="main__info">C# Developer | 1C Programmer | Web Developer<br>20 years old, Saint Petersburg</p>
+				<div class="main__button">
+					<button type="button" class="main__button_ru" value="ru" onclick="return changeURLLanguage(this);">RU</button>
+					<button type="button" class="main__button_eng" value="eng" onclick="return changeURLLanguage(this);">ENG</button>
+				</div>
+			</div>
+			<img class="image" src="img/main-image.png" alt="image">
+		</section>
+	</div>
+	<section>
+		<div class="aboutme" id="aboutme">
+			<h2 class="title aboutme__title">About me</h2>
+			<div class="aboutme__list">
+				<p class="aboutme__info ai1">Hi, I'm Peter. My main focus is desktop applications. But I also really like web development.</p>
+				<p class="aboutme__info ai2">I am a third-year student at the International Banking Institute. This site was created as part of a first semester assignment.</p>
+				<p class="aboutme__info ai3">Ready to benefit cool teams and learn from professionals.</p>
+			</div>
+		</div>
+	</section>
+	<div class="container">
+		<section>
+			<div class="skills" id="skills">
+				<h2 class="title skills__title">Skills</h2>
+				<p class="skills__text">I work in such programs as</p>
+			</div>
+			<div class="card">
+				<div class="card__item">
+					<dic class="card__cover">
+						<img class="card__img" src="img/visual_studio-img.png" alt="image">
+					</dic>
+					<p class="card__text">Visual Studio</p>
+					<div class="card__stars">
+						<img class="card__img_star" src="img/black_star.svg" alt="star">
+						<img class="card__img_star" src="img/black_star.svg" alt="star">
+						<img class="card__img_star" src="img/black_star.svg" alt="star">
+						<img class="card__img_star" src="img/black_star.svg" alt="star">
+						<img class="card__img_star" src="img/white_star.svg" alt="star">
+					</div>
+				</div>
+				<div class="card__item">
+					<dic class="card__cover">
+						<img class="card__img" src="img/figma-img.png" alt="image">
+					</dic>					
+					<p class="card__text">Figma</p>
+					<div class="card__stars">
+						<img class="card__img_star" src="img/black_star.svg" alt="star">
+						<img class="card__img_star" src="img/black_star.svg" alt="star">
+						<img class="card__img_star" src="img/white_star.svg" alt="star">
+						<img class="card__img_star" src="img/white_star.svg" alt="star">
+						<img class="card__img_star" src="img/white_star.svg" alt="star">
+					</div>
+				</div>
+				<div class="card__item">
+					<dic class="card__cover">
+						<img class="card__img" src="img/visual_studio_code-img.png" alt="image">
+					</dic>					
+					<p class="card__text">Visual Studio Code</p>
+					<div class="card__stars">
+						<img class="card__img_star" src="img/black_star.svg" alt="star">
+						<img class="card__img_star" src="img/black_star.svg" alt="star">
+						<img class="card__img_star" src="img/black_star.svg" alt="star">
+						<img class="card__img_star" src="img/white_star.svg" alt="star">
+						<img class="card__img_star" src="img/white_star.svg" alt="star">
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<section>
+		<div class="portfolio" id="portfolio">
+			<h2 class="title portfolio__title">Portfolio</h2>
+			<img class="portfolio__image" src="img/portfolio-image.jpg" alt="Image">
+			<a class="portoflio__link" href="https://github.com/GreeenTeea/Kovrigin.JapaneseCrosswordPuzzleGame.git" target="_blank">Desktop application - Japanese crossword puzzles</a>
+		</div>
+	</section>
+	<footer class="footer">
+		<div id="footer__contacts">
+			<h2 class="title footer__title">Contacts</h2>
+			<p class="footer__info">Want to know more or just chat? You are welcome!</p>
+			<button type="button" class="footer__button">Send message</button>
+		</div>
+		<div class="footer__list">
+			<a class="footer__item" href="https://vk.com/peta40k" target="_blank"><img class="footer__img" src="img/vk-icon.svg" alt="vk"></a>
+			<a class="footer__item" href="https://github.com/GreeenTeea" target="_blank"><img class="footer__img" src="img/github-icon.svg" alt="github"></a>
+			<a class="footer__item" href="https://t.me/Peta40k" target="_blank"><img class="footer__img" src="img/telegram-icon.svg" alt="telegram"></a>
+		</div>
+		<p class=footer__text>Follow me on<br>Vk, Github, Telegram</p>
+	</footer>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="js/lang.js"></script>
+	<script src="js/script.js"></script>
+</body>
+</html>

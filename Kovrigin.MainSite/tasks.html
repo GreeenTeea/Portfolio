@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Задачи</title>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/normalize.min.css">
+	<link rel="stylesheet" href="css/tasks.css">
+</head>
+<body>
+	<div class="container">
+		<section id="task1">
+			<h2 class="title">Задание 1</h2>
+			<table>
+				<tr>
+					<td colspan="2">Один</td>
+					<td class="bluebg">Два</td>
+					<td>Три</td>
+				</tr>
+				<tr>
+					<td class="four">Четыре</td>
+					<td class="five">Пять</td>
+					<td class="six" rowspan="2">Шесть</td>
+					<td class="seven">Семь</td>
+				</tr>
+				<tr>
+					<td class="eight">Восемь</td>
+					<td class="nine">Девять</td>
+					<td class="ten">Десять</td>
+				</tr>
+			</table>
+		</section>
+	</div>
+	<section id="task2">
+		<h2 class="title">Задание 2</h2>
+		<table>
+			<tr>
+				<td colspan="2"><a href="#" class="person">Человек</a></td>
+				<td colspan="2"><a href="#" class="smile"></a></td>
+			</tr>
+			<tr>
+				<td>
+					<div class="person-to-show">
+						<img src="img/person.png" alt="">
+					</div>
+				</td>
+				<td class="block">
+					<a href="#" class="file">Файл</a>
+					<a href="#" class="option">Правка</a>
+					<div class="file-to-show">
+						<p>Открыть</p>
+						<p>Сохранить</p>
+					</div>
+					<div class="option-to-show">
+						<p>Редактировать</p>
+						<p>Удалить</p>
+					</div>
+				</td>
+				<td></td>
+				<td></td>
+			</tr>
+		</table>
+	</section>
+	<div class="container">
+		<section id="task3">
+			<h2 class="title">Задание 3</h2>
+			<div id="rectangle1"></div>
+			<div id="square"></div>   
+			<div id="circle"></div>
+			<br>
+			<div id="donate">
+				<div id="triangle"></div>
+				<div id="rectangle2"></div>
+			</div>
+			<hr class="rounded">
+			<div class="house">
+				<div id="pipe"></div>
+				<div id="header"></div>
+				<div id="room"></div>
+				<div id="window"></div>
+				<div id="haha"></div>
+			</div>
+		</section>
+	</div>
+	<section id="task4">
+		<h2 class="title">Задание 4</h2>
+		<div class="flex-gigacontainer">
+			<div class="flex-container">
+				<div>
+					<h2 class="letter1">Это мяч?...</h2>
+					<h2 class="letter2">Это кирпич...</h2>
+				</div>
+				<div>
+					<img src="img/task4/boy1.png" alt="" class="img1">
+					<img src="img/task4/boy2.png" alt="" class="img2">
+					<img src="img/task4/boy3.png" alt="" class="img3">
+					<img src="img/task4/boy7.png" alt="Кирпич" class="img4">
+				</div>
+			</div>
+			<div class="flex-container">
+				<div>
+					<h2 class="letter1">Это мяч?...</h2>
+					<h2 class="letter2">Это кирпич...</h2>
+				</div>
+				<div>
+					<img src="img/task4/boy1.png" alt="" class="img1">
+					<img src="img/task4/boy2.png" alt="" class="img2">
+					<img src="img/task4/boy3.png" alt="" class="img3">
+					<img src="img/task4/boy7.png" alt="Кирпич" class="img4">
+				</div>
+			</div>
+			<div class="flex-container">
+				<div>
+					<h2 class="letter1">Это мяч?...</h2>
+					<h2 class="letter2">Это кирпич...</h2>
+				</div>
+				<div>
+					<img src="img/task4/boy1.png" alt="" class="img1">
+					<img src="img/task4/boy2.png" alt="" class="img2">
+					<img src="img/task4/boy3.png" alt="" class="img3">
+					<img src="img/task4/boy7.png" alt="Кирпич" class="img4">
+				</div>
+			</div>
+		</div>
+	</section>
+	<div class="container">
+		<section id="task5">
+			<h2 class="title">Задание 5</h2>
+			<div class="flex-container">
+				<div class="flex-item">
+					<button name="metal" id="button1">
+						<img id="button1-img" src="img/task5/metal.PNG" alt="Металопрокат">
+					</button>
+				</div>
+				<div class="flex-item">
+					<button name="wood" id="button2">
+						<img id="button2-img" src="img/task5/wood.PNG" alt="Пиломатериалы">
+					</button>
+				</div>
+			</div>
+			<div class="flex-container">
+				<div id="image1"></div>
+				<div id="image2"></div>
+			</div>
+		</section>
+	</div>
+	<section id="task6">
+		<h2 class="title">Задание 6</h2>
+		<div class="sheet-music">
+			<div class="sheet-music__list">
+				<div class="sheet-music__item sheet-music__do" onclick="addBlock(this);">до</div>
+				<div class="sheet-music__item sheet-music__re" onclick="addBlock(this);">ре</div>
+				<div class="sheet-music__item sheet-music__mi" onclick="addBlock(this);">ми</div>
+				<div class="sheet-music__item sheet-music__fa" onclick="addBlock(this);">фа</div>
+				<div class="sheet-music__item sheet-music__sol" onclick="addBlock(this);">соль</div>
+				<div class="sheet-music__item sheet-music__lia" onclick="addBlock(this);">ля</div>
+				<div class="sheet-music__item sheet-music__si" onclick="addBlock(this);">си</div>
+			</div>
+			<input class="sheet-music__text" type="text">
+			<div class="sheet-music__note">
+
+			</div>
+		</div>
+	</section>
+	<!-- <div class="container">
+		<section id="task7">
+			<h2 class="title">Задание 7</h2>
+		</section>
+	</div>
+	<section id="task8">
+		<h2 class="title">Задание 8</h2>
+	</section> -->
+
+	<script src="js/tasks.js"></script>
+</body>
+</html>

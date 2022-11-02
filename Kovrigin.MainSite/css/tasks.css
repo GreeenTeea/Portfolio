@@ -1,0 +1,513 @@
+@import url(https://myfonts.ru/myfonts?fonts=gilroy);
+
+body {
+  font-family: "Gilroy", arial;
+  background: #fff;
+  font-weight: 500;
+  color: #000;
+}
+.container {
+  max-width: 940px;
+  margin: 0 auto;
+}
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0 auto;
+  padding: 20px 0 20px 0;
+}
+/* ========= Редактирование задания 1 ========= */
+#task1 {
+  background: white;
+}
+#task1 table {
+  width: 600px;
+  height: 450px;
+  font-size: 25px;
+  font-weight: 700;
+  border-collapse: collapse;
+  text-align: center;
+  margin: 0 auto 40px;
+}
+#task1 td {
+  border: 7px solid red;
+}
+.bluebg {
+  background-color: rgb(30, 138, 206);
+}
+.four {
+  color: blue;
+}
+#task1 .five {
+  color: blue;
+  border: 8px dashed green;
+}
+.six {
+  color: red;
+}
+#task1 .seven {
+  color: green;
+  border: 8px dotted blue;
+}
+.eight {
+  color: green;
+}
+.nine {
+  color: green;
+  background-color: yellow;
+}
+.ten {
+  color: green;
+}
+/* ========= Редактирование задания 2 ========= */
+#task2 {
+  background: #f6f6f6;
+  height: 600px;
+}
+#task2 table {
+  width: 600px;
+  height: 450px;
+  font-size: 25px;
+  font-weight: 700;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+#task2 td {
+  border: 7px solid black;
+  height: 50%;
+}
+#task2 td.block {
+  width: 200px;
+  height: 200px;
+  font-size: 15px;
+}
+#task2 a.smile {
+  background-image: url(/img/task2/positive_smile.png);
+  width: 48px;
+  height: 48px;
+  display: block;
+}
+#task2 a.smile:hover {
+  background-image: url(/img/task2/shocked_smile.png);
+}
+#task2 a.smile:active {
+  background-image: url(/img/task2/neuter_smile.png);
+}
+.person-to-show {
+  display: none;
+}
+#task2 a.person:hover ~ .person-to-show {
+  display: block;
+}
+#task2 a.file:hover ~ .file-to-show {
+  display: block;
+}
+#task2 a.option:hover ~ .option-to-show {
+  display: block;
+  top: 100px;
+}
+.file-to-show {
+  display: none;
+}
+.option-to-show {
+  display: none;
+}
+/* ========= Редактирование задания 3 ========= */
+#rectangle1 {
+  width: 100px;
+  height: 50px;
+  background: black;
+}
+#circle {
+  width: 120px;
+  height: 120px;
+  background: greenyellow;
+  -moz-border-radius: 60px;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+}
+#square {
+  width: 100px;
+  height: 100px;
+  background: red;
+}
+#donate {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+  border: 40px solid red;
+  position: relative;
+  border-radius: 50%;
+  animation: donate 3s linear infinite;
+}
+#triangle {
+  width: 0;
+  height: 0;
+  border-bottom: 140px solid black;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  transform: rotate(-40deg);
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  animation: triangle 6s linear infinite;
+}
+#rectangle2 {
+  width: 100px;
+  height: 500px;
+  background: purple;
+  transform: rotate(-40deg);
+  position: absolute;
+  top: 75px;
+  left: 240px;
+  animation: rectangle 12s linear infinite;
+}
+
+@keyframes triangle {
+  0% {
+    transform: rotate(-40deg);
+  }
+  100% {
+    transform: rotate(320deg);
+  }
+}
+
+@keyframes donate {
+  from {
+    border-radius: 50%;
+  }
+  to {
+    border-radius: 0%;
+  }
+}
+
+@keyframes rectangle {
+  0% {
+    width: 100px;
+    height: 500px;
+  }
+  100% {
+    width: 50px;
+    height: 300px;
+  }
+}
+
+#task3 hr.rounded {
+  margin-top: 180px;
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+.house {
+  width: 500px;
+  height: 520px;
+  position: relative;
+  background: transparent;
+  margin: 0 auto;
+}
+#header {
+  width: 0;
+  height: 0;
+  border-bottom: 200px solid red;
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  position: absolute;
+  left: 150px;
+  top: 100px;
+}
+#pipe {
+  width: 30px;
+  height: 150px;
+  background: rgb(45, 236, 45);
+  left: 300px;
+  top: 150px;
+  position: absolute;
+}
+#room {
+  width: 180px;
+  height: 200px;
+  background: blue;
+  left: 160px;
+  top: 300px;
+  position: absolute;
+}
+#window {
+  position: absolute;
+  left: 200px;
+  top: 350px;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(white, yellow 60%);
+  -moz-border-radius: 60px;
+  -webkit-border-radius: 60px;
+  border-radius: 60px;
+}
+#haha {
+  position: absolute;
+  left: 200px;
+  top: 410px;
+  width: 100px;
+  height: 50px;
+  background: blue;
+}
+/* ========= Редактирование задания 4 ========= */
+#task4 {
+  background: #f6f6f6;
+  height: 500px;
+}
+#task4 .flex-gigacontainer {
+  display: flex;
+  flex-flow: raw wrap;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  align-items: center;
+  align-content: center;
+  max-width: 940px;
+  margin: 0 auto;
+}
+#task4 .flex-container {
+  position: relative;
+  display: flex;
+  flex-flow: raw wrap;
+  width: 200px;
+  height: 200px;
+  border: 1px solid red;
+  overflow: hidden;
+}
+#task4 .letter1 {
+  position: absolute;
+  height: 50px;
+  width: 200px;
+  font-size: 17px;
+  text-align: center;
+  font-weight: 700;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#task4 .flex-container:hover .letter1 {
+  opacity: 1;
+}
+#task4 .flex-container:active .letter1 {
+  opacity: 0;
+}
+#task4 .letter2 {
+  position: absolute;
+  height: 50px;
+  width: 200px;
+  font-size: 17px;
+  text-align: center;
+  font-weight: 700;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#task4 .flex-container:active .letter2 {
+  opacity: 1;
+}
+#task4 .img1 {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  top: 50px;
+  opacity: 1;
+  transition: opacity 0.5s ease;
+}
+#task4 .flex-container:hover .img1 {
+  opacity: 0;
+}
+#task4 .img2 {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  top: 50px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#task4 .flex-container:hover .img2 {
+  opacity: 1;
+}
+#task4 .flex-container:active .img2 {
+  opacity: 0;
+}
+#task4 .img3 {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  top: 50px;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+#task4 .flex-container:active .img3 {
+  opacity: 1;
+}
+#task4 .img4 {
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  top: 50px;
+  opacity: 0;
+  transition: opacity 3s ease;
+}
+#task4 .flex-container:hover .img4 {
+  opacity: 1;
+}
+#task4 .flex-container:active .img4 {
+  transform-origin: 100px 130px 0;
+  animation: lego 4s forwards;
+}
+@keyframes lego {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  100% {
+    transform: translate(100px, -100px) rotate(360deg);
+  }
+}
+#task4 .flex-container:active {
+  animation: shake 2s infinite linear;
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+/* ========= Редактирование задания 5 ========= */
+#task5 .flex-item #button1-img {
+  width: 250px;
+  height: 250px;
+}
+#task5 .flex-item #button2-img {
+  width: 250px;
+  height: 250px;
+}
+#task5 #image1 {
+  top: 300px;
+  left: 50px;
+  width: 250px;
+  height: 240px;
+}
+#task5 #image2 {
+  top: 300px;
+  left: 300px;
+  width: 250px;
+  height: 240px;
+}
+#task5 .flex-container {
+  align-content: stretch;
+  display: flex;
+  flex-flow: raw wrap;
+  top: 50px;
+  left: 50px;
+  width: 500px;
+  height: 250px;
+  margin: 0 auto;
+}
+#task5 #image1 p {
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+}
+#task5 #image2 p {
+  text-align: center;
+  font-weight: 500;
+  font-size: 20px;
+}
+/* ========= Редактирование задания 6 ========= */
+#task6 {
+  background: #f6f6f6;
+  height: 500px;
+}
+.sheet-music {
+  max-width: 940px;
+  margin: 0 auto;
+  text-align: center;
+}
+.sheet-music__list {
+  display: flex;
+  justify-content: space-around;
+  width: 450px;
+  height: 100px;
+  margin: 0 auto 20px;
+}
+.sheet-music__item {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 55px;
+  bottom: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+.sheet-music__do {
+  background: red;
+}
+.sheet-music__re {
+  background: yellow;
+}
+.sheet-music__mi {
+  background: lightblue;
+}
+.sheet-music__fa {
+  background: pink;
+}
+.sheet-music__sol {
+  background: green;
+}
+.sheet-music__lia {
+  background: rgb(156, 77, 45);
+}
+.sheet-music__si {
+  background: rgb(166, 27, 194);
+}
+.sheet-music__text {
+  font-size: 20px;
+  font-weight: 700;
+  width: 450px;
+  margin: 10px auto 20px;
+}
+.sheet-music__note {
+  display: flex;
+  justify-content: left;
+  flex-flow: row wrap;
+  width: 450px;
+  min-height: 100px;
+  margin: 0 auto;
+  gap: 10px;
+}
+.item {
+  width: 40px;
+  height: 40px;
+  transition: 3s linear;
+}
