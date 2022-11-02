@@ -63,54 +63,48 @@ function main() {
 
 // Задание 6
 var inputArray = [];
-var i = -1;
+var i = -1, id;
 
 function addBlock(note){
 	document.querySelector('.sheet-music__note').insertAdjacentHTML('beforeend', newBlock(note));
+	document.querySelector('.sheet-music__text').value = inputArray.join('');
 }
 
 function newBlock(note){
 	i++;
 	if(note.className.includes("sheet-music__do")){
-		document.querySelector('.sheet-music__text').value += "до "
-		inputArray.push("до");
-		console.log(inputArray)
+		inputArray.push("до ");
 		return (
 			`<div id="${i}" class="sheet-music__do item" onclick="removeBlock(this);"></div>`
 		);
 	} else if(note.className.includes("sheet-music__re")){
-		document.querySelector('.sheet-music__text').value += "ре "
-		inputArray.push("ре");
+		inputArray.push("ре ");
 		return (
 			`<div id="${i}" class="sheet-music__re item" onclick="removeBlock(this);"></div>`
 		);
 	} else if(note.className.includes("sheet-music__mi")){
 		document.querySelector('.sheet-music__text').value += "ми "
-		inputArray.push("ми");
+		inputArray.push("ми ");
 		return (
 			`<div id="${i}" class="sheet-music__mi item" onclick="removeBlock(this);"></div>`
 		);
 	} else if(note.className.includes("sheet-music__fa")){
-		document.querySelector('.sheet-music__text').value += "фа "
-		inputArray.push("фа");
+		inputArray.push("фа ");
 		return (
 			`<div id="${i}" class="sheet-music__fa item" onclick="removeBlock(this);"></div>`
 		);
 	} else if(note.className.includes("sheet-music__sol")){
-		document.querySelector('.sheet-music__text').value += "соль "
-		inputArray.push("соль");
+		inputArray.push("соль ");
 		return (
 			`<div id="${i}" class="sheet-music__sol item" onclick="removeBlock(this);"></div>`
 		);
 	} else if(note.className.includes("sheet-music__lia")){
-		document.querySelector('.sheet-music__text').value += "ля "
-		inputArray.push("ля");
+		inputArray.push("ля ");
 		return (
 			`<div id="${i}" class="sheet-music__lia item" onclick="removeBlock(this);"></div>`
 		);
 	} else if(note.className.includes("sheet-music__si")){
-		document.querySelector('.sheet-music__text').value += "си "
-		inputArray.push("си");
+		inputArray.push("си ");
 		return (
 			`<div id="${i}" class="sheet-music__si item" onclick="removeBlock(this);"></div>`
 		);
@@ -118,8 +112,8 @@ function newBlock(note){
 }
 
 function removeBlock(item){
-	console.log(item.id)
-	inputArray.remove(item.id)
+	delete inputArray[item.id]
+	document.querySelector('.sheet-music__text').value = inputArray.join('');
 
 	item.style.transform = 'translateY(450px)';
 
