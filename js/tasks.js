@@ -121,3 +121,40 @@ function removeBlock(item){
 		item.remove();
 	}, 3000);
 };
+// Задание 7
+var letter = "лес, бочка, 20, бык, крик, 3"
+var comma = ', '
+var arraySimpleNumbers = [];
+var arraySimpleWords = letter.split(comma)
+for (let element of arraySimpleWords) {
+	if(element%1 == 0){
+		arraySimpleNumbers.push(element)
+		arraySimpleWords.splice(arraySimpleWords.indexOf(element), 1)
+	}
+  }
+  arraySimpleWords.sort();
+  arraySimpleWords.sort(SortArray);
+console.log(arraySimpleWords.sort())
+console.log(arraySimpleNumbers.sort(SortArray))
+
+function SortArray(x, y){
+	if(x > y){return -1;}
+	if(x < y){return 1;}
+	return 0;
+}
+
+const arrayTask7 = new Map()
+for( let i = 0; i < arraySimpleWords.length; i++){
+	arrayTask7.set (`a${i}`, `${arraySimpleWords[i]}`)
+}
+for( let i = 0; i < arraySimpleNumbers.length; i++){
+	arrayTask7.set (`n${i}`, `${arraySimpleNumbers[i]}`)
+}
+
+for (let key of arrayTask7.keys()) {
+console.log(key);
+}
+
+for (let value of arrayTask7.values()) {
+console.log(value);
+}
