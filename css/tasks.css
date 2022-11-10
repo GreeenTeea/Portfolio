@@ -511,3 +511,54 @@ body {
   height: 40px;
   transition: 3s linear;
 }
+/* ========= Редактирование задания 8 ========= */
+.paint{
+  display: flex;
+  flex-direction: row;
+}
+.paint__palette, .paint__canvas {
+  display: block;
+  border: solid 1px #aaa;
+}
+.paint__canvas{
+  margin: 0 auto;
+}
+.paint__palette {
+  width: 100px;
+  display: flex;
+  flex-flow: row wrap;
+}
+.paintButton{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  max-width: 940px;
+}
+.paintButton__clear, .paintButton__save, .paint__button_fill {
+  background: #eee;
+  color: #777;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  margin-top: 15px;
+  cursor: pointer;
+}
+.paint__button_fill{
+  width: 100px;
+  margin: 0 auto;
+  height: 50px;
+}
+.paletteBlock {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  padding: 1px;
+  cursor: pointer;
+  border: solid 1px #fff;
+}
+.paletteBlock:hover {
+  border: solid 1px #f00;
+}
+.paletteBlock:active {
+  border: solid 1px #ff0;
+}

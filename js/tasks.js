@@ -158,3 +158,85 @@ console.log(key);
 for (let value of arrayTask7.values()) {
 console.log(value);
 }
+//Задание 8
+window.addEventListener("load", function onWindowLoad() {
+
+    generatePalette(document.querySelector(".paint__palette"));
+ 
+    var canvas = document.querySelector(".paint__canvas");
+    var context = canvas.getContext("2d");
+ 
+    // переменные для рисования
+    context.lineCap = "round";
+    context.lineWidth = 8;
+ 
+    // вешаем обработчики на кнопки
+    // очистка изображения
+    document.querySelector(".paintButton__clear").onclick = function clear() {
+      context.clearRect(0, 0, canvas.width, canvas.height);
+    };
+ 
+	document.querySelector(".paintButton__save").onclick = function save() {
+		var dataURL = canvas.toDataURL("image/png");
+		var link = document.createElement("a");
+		document.body.appendChild(link);
+		link.href = dataURL;
+		link.download = "image.png";
+		link.click();
+		document.body.removeChild(link);
+	}
+
+	document.querySelector(".paint__button_fill").onclick = function fill(){
+		context.fillStyle = context.strokeStyle;
+		context.fillRect(0, 0, canvas.width, canvas.height);
+
+	}
+
+    // На любое движение мыши по canvas будет выполнятся эта функция
+    canvas.onmousemove = function drawIfPressed (e) {
+      // в "e"  попадает экземпляр MouseEvent
+      var x = e.offsetX;
+      var y = e.offsetY;
+      var dx = e.movementX;
+      var dy = e.movementY;
+ 
+      // Проверяем зажата ли какая-нибудь кнопка мыши
+      // Если да, то рисуем
+      if (e.buttons > 0) {
+        context.beginPath();
+        context.moveTo(x, y);
+        context.lineTo(x - dx, y - dy);
+        context.stroke();
+        context.closePath();
+      }
+    };
+ 
+    function generatePalette(palette) {
+      // генерируем палитру
+      // в итоге 5^3 цветов = 125
+      for (var r = 0, max = 4; r <= max; r++) {
+        for (var g = 0; g <= max; g++) {
+          for (var b = 0; b <= max; b++) {
+            var paletteBlock = document.createElement('div');
+            paletteBlock.className = 'paletteBlock';
+            paletteBlock.addEventListener("click", function changeColor(e) {
+              context.strokeStyle = e.target.style.backgroundColor;
+            });
+			document.addEventListener("dblclick", function changeBackground(e) {
+				context.beginPath();
+				context.fillStyle = e.target.style.backgroundColor;
+				context.fill();
+			});
+ 
+            paletteBlock.style.backgroundColor = (
+              'rgb(' + Math.round(r * 255 / max) + ", "
+              + Math.round(g * 255 / max) + ", "
+              + Math.round(b * 255 / max) + ")"
+            );
+ 
+            palette.appendChild(paletteBlock);
+          }
+        }
+      }
+    }
+});
