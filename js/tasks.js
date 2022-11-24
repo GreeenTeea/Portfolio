@@ -65,45 +65,45 @@ function main() {
 var inputArray = [];
 var i = -1, id;
 
-function addBlock(note){
+function addBlock(note) {
 	document.querySelector('.sheet-music__note').insertAdjacentHTML('beforeend', newBlock(note));
 	document.querySelector('.sheet-music__text').value = inputArray.join('');
 }
 
-function newBlock(note){
+function newBlock(note) {
 	i++;
-	if(note.className.includes("sheet-music__do")){
+	if (note.className.includes("sheet-music__do")) {
 		inputArray.push("до ");
 		return (
 			`<div id="${i}" class="sheet-music__do item" onclick="removeBlock(this);"></div>`
 		);
-	} else if(note.className.includes("sheet-music__re")){
+	} else if (note.className.includes("sheet-music__re")) {
 		inputArray.push("ре ");
 		return (
 			`<div id="${i}" class="sheet-music__re item" onclick="removeBlock(this);"></div>`
 		);
-	} else if(note.className.includes("sheet-music__mi")){
+	} else if (note.className.includes("sheet-music__mi")) {
 		document.querySelector('.sheet-music__text').value += "ми "
 		inputArray.push("ми ");
 		return (
 			`<div id="${i}" class="sheet-music__mi item" onclick="removeBlock(this);"></div>`
 		);
-	} else if(note.className.includes("sheet-music__fa")){
+	} else if (note.className.includes("sheet-music__fa")) {
 		inputArray.push("фа ");
 		return (
 			`<div id="${i}" class="sheet-music__fa item" onclick="removeBlock(this);"></div>`
 		);
-	} else if(note.className.includes("sheet-music__sol")){
+	} else if (note.className.includes("sheet-music__sol")) {
 		inputArray.push("соль ");
 		return (
 			`<div id="${i}" class="sheet-music__sol item" onclick="removeBlock(this);"></div>`
 		);
-	} else if(note.className.includes("sheet-music__lia")){
+	} else if (note.className.includes("sheet-music__lia")) {
 		inputArray.push("ля ");
 		return (
 			`<div id="${i}" class="sheet-music__lia item" onclick="removeBlock(this);"></div>`
 		);
-	} else if(note.className.includes("sheet-music__si")){
+	} else if (note.className.includes("sheet-music__si")) {
 		inputArray.push("си ");
 		return (
 			`<div id="${i}" class="sheet-music__si item" onclick="removeBlock(this);"></div>`
@@ -111,13 +111,13 @@ function newBlock(note){
 	}
 }
 
-function removeBlock(item){
+function removeBlock(item) {
 	delete inputArray[item.id]
 	document.querySelector('.sheet-music__text').value = inputArray.join('');
 
 	item.style.transform = 'translateY(450px)';
 
-	setTimeout(function(){
+	setTimeout(function () {
 		item.remove();
 	}, 3000);
 };
@@ -127,70 +127,70 @@ var comma = ', '
 var arraySimpleNumbers = [];
 var arraySimpleWords = letter.split(comma)
 for (let element of arraySimpleWords) {
-	if(element%1 == 0){
+	if (element % 1 == 0) {
 		arraySimpleNumbers.push(element)
 		arraySimpleWords.splice(arraySimpleWords.indexOf(element), 1)
 	}
-  }
-  arraySimpleWords.sort();
-  arraySimpleWords.sort(SortArray);
+}
+arraySimpleWords.sort();
+arraySimpleWords.sort(SortArray);
 console.log(arraySimpleWords.sort())
 console.log(arraySimpleNumbers.sort(SortArray))
 
-function SortArray(x, y){
-	if(x > y){return -1;}
-	if(x < y){return 1;}
+function SortArray(x, y) {
+	if (x > y) { return -1; }
+	if (x < y) { return 1; }
 	return 0;
 }
 
 const arrayTask7 = new Map()
-for( let i = 0; i < arraySimpleWords.length; i++){
-	arrayTask7.set (`a${i}`, `${arraySimpleWords[i]}`)
+for (let i = 0; i < arraySimpleWords.length; i++) {
+	arrayTask7.set(`a${i}`, `${arraySimpleWords[i]}`)
 }
-for( let i = 0; i < arraySimpleNumbers.length; i++){
-	arrayTask7.set (`n${i}`, `${arraySimpleNumbers[i]}`)
+for (let i = 0; i < arraySimpleNumbers.length; i++) {
+	arrayTask7.set(`n${i}`, `${arraySimpleNumbers[i]}`)
 }
 
 for (let key of arrayTask7.keys()) {
-console.log(key);
+	console.log(key);
 }
 
 for (let value of arrayTask7.values()) {
-console.log(value);
+	console.log(value);
 }
 //Задание 8
 window.addEventListener("load", function onWindowLoad() {
 
-    generatePalette(document.querySelector(".paint__palette"));
- 
-    const canvas = document.querySelector(".paint__canvas");
-    const ctx = canvas.getContext("2d");
+	generatePalette(document.querySelector(".paint__palette"));
+
+	const canvas = document.querySelector(".paint__canvas");
+	const ctx = canvas.getContext("2d");
 	var timerId = null;
 
 	const imageForCanvas = new Image();
 	imageForCanvas.src = "../img/figma-img.png";
 
 	let imageFC = {
-		x: Math.floor(Math.random()*(600-imageForCanvas.width)),
-		y: Math.floor(Math.random()*(600-imageForCanvas.height))
+		x: Math.floor(Math.random() * (600 - imageForCanvas.width)),
+		y: Math.floor(Math.random() * (600 - imageForCanvas.height))
 	};
 
 	let lines = [];
- 
-    // переменные для рисования
-    ctx.lineCap = "round";
-    ctx.lineWidth = 8;
- 
-    // вешаем обработчики на кнопки
-    // очистка изображения
-    document.querySelector(".paint__button_clear").onclick = function clear() {
+
+	// переменные для рисования
+	ctx.lineCap = "round";
+	ctx.lineWidth = 8;
+
+	// вешаем обработчики на кнопки
+	// очистка изображения
+	document.querySelector(".paint__button_clear").onclick = function clear() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-		for(let i = 0; i < lines.length; i++){
+		for (let i = 0; i < lines.length; i++) {
 			lines[i].remove;
 		}
-    };
- 
+	};
+
 	document.querySelector(".paint__button_save").onclick = function save() {
 		var dataURL = canvas.toDataURL("image/png");
 		var link = document.createElement("a");
@@ -201,16 +201,16 @@ window.addEventListener("load", function onWindowLoad() {
 		document.body.removeChild(link);
 	}
 
-	document.querySelector(".paint__button_fill").onclick = function fill(){
+	document.querySelector(".paint__button_fill").onclick = function fill() {
 		ctx.fillStyle = ctx.strokeStyle;
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
 	}
 
-	document.querySelector(".paint__button_img_start").onclick = function(){
+	document.querySelector(".paint__button_img_start").onclick = function () {
 		timerId = setInterval(moveImage, 1000);
 	};
 
-	function moveImage(){
+	function moveImage() {
 		// ctx.fillStyle = "white";
 		// ctx.fillRect(0, 0, canvas.width, canvas.height);
 		ctx.drawImage(imageForCanvas, imageFC.x, imageFC.y);
@@ -218,69 +218,162 @@ window.addEventListener("load", function onWindowLoad() {
 		lines.push(imageFC);
 
 		imageFC = {
-			x: Math.floor(Math.random()*(600-imageForCanvas.width)),
-			y: Math.floor(Math.random()*(600-imageForCanvas.height))
+			x: Math.floor(Math.random() * (600 - imageForCanvas.width)),
+			y: Math.floor(Math.random() * (600 - imageForCanvas.height))
 		};
 
 		console.log(lines);
-		
+
 		ctx.beginPath();
-		ctx.moveTo(lines[0].x,lines[0].y);
-		for(let i=1; i< lines.length ;i++){
+		ctx.moveTo(lines[0].x, lines[0].y);
+		for (let i = 1; i < lines.length; i++) {
 			ctx.lineTo(lines[i].x, lines[i].y);
 		}
 		ctx.stroke();
 		ctx.closePath();
 	}
 
-	document.querySelector(".paint__button_img_stop").onclick = function(){
+	document.querySelector(".paint__button_img_stop").onclick = function () {
 		clearInterval(timerId);
 	};
 
-    // На любое движение мыши по canvas будет выполнятся эта функция
-    canvas.onmousemove = function drawIfPressed (e) {
-      // в "e"  попадает экземпляр MouseEvent
-      let x = e.offsetX;
-      let y = e.offsetY;
-      let dx = e.movementX;
-      let dy = e.movementY;
- 
-      // Проверяем зажата ли какая-нибудь кнопка мыши
-      // Если да, то рисуем
-      if (e.buttons > 0) {
-        ctx.beginPath();
-        ctx.moveTo(x, y);
-        ctx.lineTo(x - dx, y - dy);
-        ctx.stroke();
-        ctx.closePath();
-      }
-    };
- 
-    function generatePalette(palette) {
-      // генерируем палитру
-      for (let r = 0, max = 4; r <= max; r++) {
-        for (let g = 0; g <= max; g++) {
-          for (let b = 0; b <= max; b++) {
-            const paletteBlock = document.createElement('div');
-            paletteBlock.className = 'paletteBlock';
-            paletteBlock.addEventListener("click", function changeColor(e) {
-				ctx.strokeStyle = e.target.style.backgroundColor;
-            });
-			document.addEventListener("dblclick", function changeBackground(e) {
-				ctx.beginPath();
-				ctx.fillStyle = e.target.style.backgroundColor;
-				ctx.fill();
-			});
- 
-            paletteBlock.style.backgroundColor = (
-              'rgb(' + Math.round(r * 255 / max) + ", "
-              + Math.round(g * 255 / max) + ", "
-              + Math.round(b * 255 / max) + ")"
-            );
- 
-            palette.appendChild(paletteBlock);
-          }
-        }
-      }
-    }
+	// На любое движение мыши по canvas будет выполнятся эта функция
+	canvas.onmousemove = function drawIfPressed(e) {
+		// в "e"  попадает экземпляр MouseEvent
+		let x = e.offsetX;
+		let y = e.offsetY;
+		let dx = e.movementX;
+		let dy = e.movementY;
+
+		// Проверяем зажата ли какая-нибудь кнопка мыши
+		// Если да, то рисуем
+		if (e.buttons > 0) {
+			ctx.beginPath();
+			ctx.moveTo(x, y);
+			ctx.lineTo(x - dx, y - dy);
+			ctx.stroke();
+			ctx.closePath();
+		}
+	};
+
+	function generatePalette(palette) {
+		// генерируем палитру
+		for (let r = 0, max = 4; r <= max; r++) {
+			for (let g = 0; g <= max; g++) {
+				for (let b = 0; b <= max; b++) {
+					const paletteBlock = document.createElement('div');
+					paletteBlock.className = 'paletteBlock';
+					paletteBlock.addEventListener("click", function changeColor(e) {
+						ctx.strokeStyle = e.target.style.backgroundColor;
+					});
+					document.addEventListener("dblclick", function changeBackground(e) {
+						ctx.beginPath();
+						ctx.fillStyle = e.target.style.backgroundColor;
+						ctx.fill();
+					});
+
+					paletteBlock.style.backgroundColor = (
+						'rgb(' + Math.round(r * 255 / max) + ", "
+						+ Math.round(g * 255 / max) + ", "
+						+ Math.round(b * 255 / max) + ")"
+					);
+
+					palette.appendChild(paletteBlock);
+				}
+			}
+		}
+	}
 });
+//Задание 9
+class Worker {
+	constructor(work = 8, rate = 100, day = 24) {
+		this.work = work;
+		this.rate = rate;
+		this.day = day;
+	}
+
+	say(text) {
+		if (text) {
+			console.log(text);
+		} else {
+			console.log("Надо работать");
+		}
+	}
+
+	salary() {
+		console.log("Зарплата - " + this.work * this.rate * this.day);
+	}
+}
+
+class Head extends Worker {
+	constructor({ work = 16, rate = 100, day = 30 } = {}) {
+		super(work, rate, day);
+	}
+
+	say() {
+		super.say("Пора отдыхать");
+	}
+
+	salary() {
+		super.salary();
+	}
+}
+
+class Clerk extends Worker {
+	constructor({ work, rate = 80, day } = {}) {
+		super(work, rate, day);
+	}
+
+	say() {
+		super.say();
+	}
+
+	salary() {
+		super.salary();
+	}
+}
+
+class Secretary1 extends Worker {
+	constructor({ work, rate = 150, day = 20 } = {}) {
+		super(work, rate, day);
+	}
+
+	say() {
+		super.say("Внимание");
+	}
+
+	salary() {
+		super.salary();
+	}
+}
+
+class Secretary2 extends Worker {
+	constructor({ work, rate = 250, day } = {}) {
+		super(work, rate, day);
+	}
+
+	say() {
+		super.say("Ахтунг");
+	}
+
+	salary() {
+		super.salary();
+	}
+}
+
+const worker = new Worker();
+const head = new Head();
+const clerk = new Clerk();
+const secretary1 = new Secretary1();
+const secretary2 = new Secretary2();
+
+worker.say();
+worker.salary();
+head.say();
+head.salary();
+clerk.say();
+clerk.salary();
+secretary1.say();
+secretary1.salary();
+secretary2.say();
+secretary2.salary();
