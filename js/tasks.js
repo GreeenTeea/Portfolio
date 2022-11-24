@@ -290,6 +290,7 @@ class Worker {
 		this.work = work;
 		this.rate = rate;
 		this.day = day;
+		this.salary = work * rate * day;
 	}
 
 	say(text) {
@@ -301,17 +302,17 @@ class Worker {
 	}
 
 	salary() {
-		console.log("Зарплата - " + this.work * this.rate * this.day);
+		return this.salary;
 	}
 }
 
 class Head extends Worker {
-	constructor({ work = 16, rate = 100, day = 30 } = {}) {
+	constructor({ work = 16, rate = 200, day = 30 } = {}) {
 		super(work, rate, day);
 	}
 
 	say() {
-		super.say("Пора отдыхать");
+		super.say("Начальник: работает " + this.work + " часов в день, зарплата " + this.salary + ", говорит: пора отдыхать, начальник");
 	}
 
 	salary() {
@@ -325,7 +326,7 @@ class Clerk extends Worker {
 	}
 
 	say() {
-		super.say();
+		super.say("клерк: работает " + this.work + " часов в день, зарплата " + this.salary + ", говорит: надо работать");
 	}
 
 	salary() {
@@ -339,7 +340,7 @@ class Secretary1 extends Worker {
 	}
 
 	say() {
-		super.say("Внимание");
+		super.say("секретарь 1: работает " + this.work + " часов в день, зарплата " + this.salary + ", говорит: Внимание! пора отдыхать, отпуск");
 	}
 
 	salary() {
@@ -348,12 +349,12 @@ class Secretary1 extends Worker {
 }
 
 class Secretary2 extends Worker {
-	constructor({ work, rate = 250, day } = {}) {
+	constructor({ work, rate = 120, day } = {}) {
 		super(work, rate, day);
 	}
 
 	say() {
-		super.say("Ахтунг");
+		super.say("секретарь 2: работает " + this.work + " часов в день, зарплата " + this.salary + ", говорит: Ахтунг! пора отдыхать, нельзя");
 	}
 
 	salary() {
@@ -361,19 +362,12 @@ class Secretary2 extends Worker {
 	}
 }
 
-const worker = new Worker();
 const head = new Head();
 const clerk = new Clerk();
 const secretary1 = new Secretary1();
 const secretary2 = new Secretary2();
 
-worker.say();
-worker.salary();
 head.say();
-head.salary();
 clerk.say();
-clerk.salary();
 secretary1.say();
-secretary1.salary();
 secretary2.say();
-secretary2.salary();
