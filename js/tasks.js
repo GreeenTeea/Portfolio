@@ -165,7 +165,7 @@ window.addEventListener("load", function onWindowLoad() {
 
 	const canvas = document.querySelector(".paint__canvas");
 	const ctx = canvas.getContext("2d");
-	var timerId = null;
+	let timerId = null, backColor = null;
 
 	const imageForCanvas = new Image();
 	imageForCanvas.src = "../img/figma-img.png";
@@ -192,8 +192,16 @@ window.addEventListener("load", function onWindowLoad() {
 	};
 
 	document.querySelector(".paint__button_save").onclick = function save() {
-		var dataURL = canvas.toDataURL("image/png");
-		var link = document.createElement("a");
+		for (let x = 0; x < canvas.width; x++) {
+			for (let y = 0; y < canvas.height; y++) {
+				if (ctx.getImageData(x, y, 1, 1).data[0] == backColor.data[0]) {
+					ctx.fillStyle = 'white';
+					ctx.clearRect(x, y, 1, 1);
+				}
+			}
+		}
+		let dataURL = canvas.toDataURL("image/png");
+		let link = document.createElement("a");
 		document.body.appendChild(link);
 		link.href = dataURL;
 		link.download = "image.png";
@@ -204,6 +212,8 @@ window.addEventListener("load", function onWindowLoad() {
 	document.querySelector(".paint__button_fill").onclick = function fill() {
 		ctx.fillStyle = ctx.strokeStyle;
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
+		backColor = ctx.getImageData(1, 1, 1, 1);
+		console.log(backColor);
 	}
 
 	document.querySelector(".paint__button_img_start").onclick = function () {

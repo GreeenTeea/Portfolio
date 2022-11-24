@@ -512,15 +512,16 @@ body {
   transition: 3s linear;
 }
 /* ========= Редактирование задания 8 ========= */
-.paint{
+.paint {
   display: flex;
   flex-flow: row nowrap;
 }
-.paint__palette, .paint__canvas {
+.paint__palette,
+.paint__canvas {
   display: block;
   border: solid 1px #aaa;
 }
-.paint__canvas{
+.paint__canvas {
   margin: 0 auto;
 }
 .paint__palette {
@@ -528,14 +529,18 @@ body {
   display: flex;
   flex-flow: row wrap;
 }
-.paint__button{
+.paint__button {
   display: flex;
   justify-content: flex-start;
   flex-flow: row wrap;
   gap: 10px;
   margin: 0 auto;
 }
-.paint__button_fill, .paint__button_img_start, .paint__button_img_stop, .paint__button_clear, .paint__button_save{
+.paint__button_fill,
+.paint__button_img_start,
+.paint__button_img_stop,
+.paint__button_clear,
+.paint__button_save {
   background: #eee;
   color: #777;
   padding: 10px;
