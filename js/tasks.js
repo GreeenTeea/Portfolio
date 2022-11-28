@@ -192,14 +192,14 @@ window.addEventListener("load", function onWindowLoad() {
 	};
 
 	document.querySelector(".paint__button_save").onclick = function save() {
-		for (let x = 0; x < canvas.width; x++) {
-			for (let y = 0; y < canvas.height; y++) {
-				if (ctx.getImageData(x, y, 1, 1).data[0] == backColor.data[0]) {
-					ctx.fillStyle = 'white';
-					ctx.clearRect(x, y, 1, 1);
-				}
+		let imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+		console.log(imgData)
+		for (let i = 0; i < imgData.data.length; i += 4) {
+			if (imgData.data[i] == backColor.data[i] && imgData.data[i + 1] == backColor.data[i + 1] && imgData.data[i + 2] == backColor.data[i + 2]) {
+				imgData.data[i + 3] = 0;
 			}
 		}
+		ctx.putImageData(imgData, 0, 0);
 		let dataURL = canvas.toDataURL("image/png");
 		let link = document.createElement("a");
 		document.body.appendChild(link);
@@ -207,12 +207,16 @@ window.addEventListener("load", function onWindowLoad() {
 		link.download = "image.png";
 		link.click();
 		document.body.removeChild(link);
+		for (let i = 0; i < imgData.data.length; i += 4) {
+			imgData.data[i + 3] = 255;
+		}
+		ctx.putImageData(imgData, 0, 0);
 	}
 
 	document.querySelector(".paint__button_fill").onclick = function fill() {
 		ctx.fillStyle = ctx.strokeStyle;
 		ctx.fillRect(0, 0, canvas.width, canvas.height);
-		backColor = ctx.getImageData(1, 1, 1, 1);
+		backColor = ctx.getImageData(0, 0, canvas.width, canvas.height);
 		console.log(backColor);
 	}
 
