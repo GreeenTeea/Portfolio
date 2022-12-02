@@ -14,13 +14,13 @@ canvas.addEventListener('mousemove', (e) => { ClientX = e.offsetX; ClientY = e.o
 
 function drawFigure() {
 	ctx.clearRect(0, 0, canvas.width, canvas.height);
-	drawRoof(figure.get('roof'));
 	drawHouse(figure.get('house'));
+	drawRoof(figure.get('roof'));
 	drawWindow(figure.get('window'));
 
 	if (moveWindow(figure.get('window'))) { }
-	else if (moveHouse(figure.get('house'))) { }
 	else if (moveRoof(figure.get('roof'))) { }
+	else if (moveHouse(figure.get('house'))) { }
 
 	requestAnimationFrame(drawFigure);
 }
