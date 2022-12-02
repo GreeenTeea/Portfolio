@@ -565,14 +565,16 @@ body {
 .paletteBlock:active {
   border: solid 1px #ff0;
 }
-/* ========= Редактирование задания 9 ========= */
+/* ========= Редактирование задания 10 ========= */
 #task10 {
   background: #f6f6f6;
   margin: 40px auto 40px;
   padding-bottom: 20px;
 }
-.task10__canvas { 
+.task10__wrapper {
   display: block;
   border: 1px solid black;
   margin: 0 auto;
+  height: 600px;
+  width: 600px;
 }
