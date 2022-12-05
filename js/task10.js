@@ -11,6 +11,7 @@ let house = new fabric.Rect({ // Форма дома
 	lockScalingY: true,
 	originX: 'center',
 	originY: 'center',
+	stroke: 'black',
 });
 let shapeWindow = new fabric.Rect({ // Форма окна + рамка
 	fill: 'rgb(200, 232, 224)',
@@ -20,11 +21,11 @@ let shapeWindow = new fabric.Rect({ // Форма окна + рамка
 });
 let line1 = new fabric.Line([shapeWindow.left + (shapeWindow.width / 2), shapeWindow.top, shapeWindow.left + (shapeWindow.width / 2), shapeWindow.top + shapeWindow.height], { // продольная распорка окна
 	fill: 'black',
-	stroke: 'bkack'
+	stroke: 'black'
 });
 let line2 = new fabric.Line([shapeWindow.left, shapeWindow.top + shapeWindow.height / 2, shapeWindow.left + shapeWindow.width, shapeWindow.top + shapeWindow.height / 2], { // поперечная распорка окна
 	fill: 'black',
-	stroke: 'bkack'
+	stroke: 'black'
 });
 let houseWindow = new fabric.Group([shapeWindow, line1, line2], { // окно дома
 	left: Math.floor(Math.random() * 100) + 100,
@@ -82,6 +83,7 @@ let foliage1 = new fabric.Triangle({ // верхняя листва
 	lockScalingY: true,
 	originX: 'center',
 	originY: 'center',
+	stroke: 'black',
 });
 let foliage2 = new fabric.Triangle({ // средняя листва
 	left: Math.floor(Math.random() * 100) + 100,
@@ -94,6 +96,7 @@ let foliage2 = new fabric.Triangle({ // средняя листва
 	lockScalingY: true,
 	originX: 'center',
 	originY: 'center',
+	stroke: 'black',
 });
 let foliage3 = new fabric.Triangle({ // нижняя листва
 	left: Math.floor(Math.random() * 100) + 100,
@@ -106,6 +109,7 @@ let foliage3 = new fabric.Triangle({ // нижняя листва
 	lockScalingY: true,
 	originX: 'center',
 	originY: 'center',
+	stroke: 'black',
 });
 let treeTrunk = new fabric.Rect({ // Форма ствола дерева
 	left: Math.floor(Math.random() * 100) + 100,
