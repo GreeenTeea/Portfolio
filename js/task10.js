@@ -21,11 +21,11 @@ let shapeWindow = new fabric.Rect({ // Форма окна + рамка
 });
 let line1 = new fabric.Line([shapeWindow.left + (shapeWindow.width / 2), shapeWindow.top, shapeWindow.left + (shapeWindow.width / 2), shapeWindow.top + shapeWindow.height], { // продольная распорка окна
 	fill: 'black',
-	stroke: 'black'
+	stroke: 'black',
 });
 let line2 = new fabric.Line([shapeWindow.left, shapeWindow.top + shapeWindow.height / 2, shapeWindow.left + shapeWindow.width, shapeWindow.top + shapeWindow.height / 2], { // поперечная распорка окна
 	fill: 'black',
-	stroke: 'black'
+	stroke: 'black',
 });
 let houseWindow = new fabric.Group([shapeWindow, line1, line2], { // окно дома
 	left: Math.floor(Math.random() * 100) + 100,
